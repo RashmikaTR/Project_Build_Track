@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 
 // Middleware
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 
 // Test Route
