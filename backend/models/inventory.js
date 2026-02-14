@@ -81,4 +81,4 @@ inventorySchema.pre(["findOneAndUpdate", "updateOne"], function (next) {
 
   next();
 });
-module.exports = mongoose.model("Inventory", inventorySchema);
+module.exports = mongoose.model("inventory", inventorySchema);
