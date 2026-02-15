@@ -24,3 +24,5 @@ exports.createUser = async (req, res) => {
     password: passwordPlain,
   });
 };
+
+//changed userController.js
