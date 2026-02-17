@@ -17,6 +17,8 @@ app.use(express.json());
 // --- ROUTES IMPORTS ---
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const messageRoutes = require("./routes/messageRoutes");
 
 // --- ROUTE IMPLEMENTATION ---
 
@@ -26,6 +28,8 @@ app.use("/api/auth", authRoutes);
 // 2. Protected Routes (Require JWT Verification)
 // Apply the verifyToken middleware to all secure routes
 app.use("/api/users", verifyToken, userRoutes);
+app.use("/api/messages", verifyToken, messageRoutes);
+app.use("/api/dashboard", verifyToken, dashboardRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
