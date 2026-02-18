@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Site = require('../models/Site');
 const Labor = require('../models/Labor');
-const Inventory = require('../models/Inventory');
+const Inventory = require('../models/inventory');
 
 // GET aggregated dashboard data
 router.get('/', async (req, res) => {
