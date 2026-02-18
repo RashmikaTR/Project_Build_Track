@@ -19,6 +19,8 @@ const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const messageRoutes = require("./routes/messageRoutes");
+const laborRoutes = require("./routes/laborRoutes");
+const inventoryRoutes = require("./routes/inventoryRoutes");
 
 // --- ROUTE IMPLEMENTATION ---
 
@@ -30,6 +32,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", verifyToken, userRoutes);
 app.use("/api/messages", verifyToken, messageRoutes);
 app.use("/api/dashboard", verifyToken, dashboardRoutes);
+app.use("/api/labors", verifyToken, laborRoutes); 
+app.use("/api/inventory", verifyToken, inventoryRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
