@@ -21,6 +21,7 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const laborRoutes = require("./routes/laborRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
+const sitesTasksRoutes = require("./routes/sitesTasksRoutes");
 
 // --- ROUTE IMPLEMENTATION ---
 
@@ -34,6 +35,7 @@ app.use("/api/messages", verifyToken, messageRoutes);
 app.use("/api/dashboard", verifyToken, dashboardRoutes);
 app.use("/api/labors", verifyToken, laborRoutes); 
 app.use("/api/inventory", verifyToken, inventoryRoutes);
+app.use("/api/sites", verifyToken, sitesTasksRoutes); 
 
 // Test Route
 app.get("/", (req, res) => {
