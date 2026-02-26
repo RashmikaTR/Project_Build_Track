@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
 // --- Import the JWT Verification Middleware ---
 const { verifyToken } = require('./middleware/authMiddleware');
@@ -9,6 +10,9 @@ const app = express();
 
 // Load environment variables
 dotenv.config();
+
+// Connect to MongoDB
+connectDB();
 
 // Middleware
 app.use(cors()); 
