@@ -2,16 +2,22 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Login from "./pages/Login";
+import LaborManagement from "./pages/LaborManagement";
 
 function App() {
   return (
     <LanguageProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          {/* Future routes will go here */}
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        {/* Public route (no Navbar) */}
+        <Route path="/" element={<Login />} />
+
+        {/* Protected routes with Navbar */}
+        <Route>
+          <Route path="/labor-management" element={<LaborManagement />} />
+        </Route>
+      </Routes>
+    </Router>
     </LanguageProvider>
   );
 }
