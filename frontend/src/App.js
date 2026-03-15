@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Login from "./pages/Login";
 import LaborManagement from "./pages/LaborManagement";
+import Layout from "./components/Layout";
 
 function App() {
   return (
@@ -13,7 +14,11 @@ function App() {
         <Route path="/" element={<Login />} />
 
         {/* Protected routes with Navbar */}
-        <Route>
+        <Route
+        element={
+              <Layout />
+          }
+          >
           <Route path="/labor-management" element={<LaborManagement />} />
         </Route>
       </Routes>
