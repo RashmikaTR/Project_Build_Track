@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import LaborManagement from "./pages/LaborManagement";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
+import InventoryManagement from "./pages/InventoryManagement";
 function App() {
   return (
     <LanguageProvider>
@@ -21,6 +22,7 @@ function App() {
           >
             <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/labor-management" element={<LaborManagement />} />
+          <Route path="/inventory" element={<InventoryManagement />} />
         </Route>
       </Routes>
     </Router>
