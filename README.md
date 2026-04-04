@@ -178,5 +178,5 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 ---
 
 <div align="center">
-  <p>Built with ❤️ by RashmikaTR and contributors.</p>
+  <p>Built By RashmikaTR.</p>
 </div>
