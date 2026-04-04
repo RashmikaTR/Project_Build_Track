@@ -135,7 +135,7 @@ Ensure you have the following installed to run BuildTrack smoothly:
 3.  **Start the Backend Server**
     ```sh
     npm install
-    npm run dev
+    npm start
     ```
 
 4.  **Start the Frontend App**
