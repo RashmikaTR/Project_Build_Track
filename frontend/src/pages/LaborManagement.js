@@ -164,8 +164,8 @@ const LaborManagement = memo(() => {
       labor.role === "Worker"
         ? currentSites[0] || "Unassigned"
         : currentSites.length > 0
-        ? currentSites.join(", ")
-        : "Unassigned";
+          ? currentSites.join(", ")
+          : "Unassigned";
     const siteLabel = labor.role === "Worker" ? "Current Site" : "Managed Sites";
 
     const att = attendanceSummary[labor._id] || {
@@ -288,8 +288,8 @@ const LaborManagement = memo(() => {
       lab.role === "Worker"
         ? currentSites[0] || "Unassigned"
         : currentSites.length > 0
-        ? currentSites.join(", ")
-        : "Unassigned";
+          ? currentSites.join(", ")
+          : "Unassigned";
     const siteLabel = lab.role === "Worker" ? "Current Site" : "Managed Sites";
 
     const att = attendanceSummary[lab._id] || {
@@ -300,11 +300,10 @@ const LaborManagement = memo(() => {
     return (
       <div
         key={lab._id}
-        className={`labor-card ${
-          lab.role === "Manager" || lab.role === "admin"
+        className={`labor-card ${lab.role === "Manager" || lab.role === "admin"
             ? "manager-card"
             : "worker-card"
-        }`}
+          }`}
       >
         <h3>{lab.name}</h3>
 
@@ -372,13 +371,12 @@ const LaborManagement = memo(() => {
 
       {message.text && (
         <div
-          className={`status-box ${
-            message.type === "success"
+          className={`status-box ${message.type === "success"
               ? "status-box-success"
               : message.type === "error"
-              ? "status-box-error"
-              : ""
-          }`}
+                ? "status-box-error"
+                : ""
+            }`}
         >
           {message.text}
         </div>
