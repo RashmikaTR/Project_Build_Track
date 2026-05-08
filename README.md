@@ -135,7 +135,7 @@ Ensure you have the following installed to run BuildTrack smoothly:
 3.  **Start the Backend Server**
     ```sh
     npm install
-    npm start
+    npm run dev
     ```
 
 4.  **Start the Frontend App**
@@ -178,5 +178,5 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 ---
 
 <div align="center">
-  <p>Built By RashmikaTR.</p>
+  <p>Built with ❤️ by RashmikaTR and contributors.</p>
 </div>
