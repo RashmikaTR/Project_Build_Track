@@ -1,0 +1,433 @@
+:root {
+    --primary-blue: #1d4ed8;
+    --accent-teal: #009688;
+    --error-red: #ff4d4f;
+    --bg-light: #f4f7fb;
+    --sent-bubble: #1d4ed8;
+    --received-bubble: #ffffff;
+}
+
+/* Page wrapper to match other pages */
+
+.comm-page {
+    background-color: #f4f7fb;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 100px 40px 40px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.comm-page h1 {
+    margin: 0 0 20px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #003366;
+    text-align: center;
+}
+
+/* Main card container */
+
+.comm-card {
+    display: flex;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 520px;
+}
+
+/* Sidebar */
+
+.comm-sidebar {
+    width: 320px;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    background: #f9fafb;
+    flex-shrink: 0;
+}
+
+.sidebar-top {
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-top h2 {
+    color: var(--primary-blue);
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.my-role-badge {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contact-list-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Contacts */
+
+.contact-row-item {
+    display: flex;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    align-items: center;
+}
+
+.contact-row-item:hover {
+    background: rgba(37, 99, 235, 0.04);
+}
+
+.contact-row-item.selected {
+    background: rgba(37, 99, 235, 0.08);
+    border-left: 4px solid var(--primary-blue);
+}
+
+.avatar-box {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-blue), #60a5fa);
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.admin-box {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.contact-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-name-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-name-line strong {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+}
+
+.contact-sub-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 3px;
+    overflow: hidden;
+}
+
+.role-label {
+    font-size: 0.7rem;
+    color: #4b5563;
+    background: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.site-tag-container {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.site-tag-container::-webkit-scrollbar {
+    display: none;
+}
+
+.site-pill {
+    font-size: 0.7rem;
+    color: var(--primary-blue);
+    background: #eff6ff;
+    padding: 1px 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    white-space: nowrap;
+}
+
+.unread-badge {
+    background: var(--error-red);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+/* Chat area */
+
+.chat-interface {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    min-width: 0;
+}
+
+.chat-header-bar {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+}
+
+.header-info h3 {
+    margin: 0;
+    font-size: 0.98rem;
+    color: #111827;
+}
+
+.header-status {
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
+/* messages */
+
+.chat-messages-area {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comm-bubble {
+    max-width: 70%;
+    padding: 9px 12px;
+    border-radius: 14px;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.comm-bubble.sent {
+    align-self: flex-end;
+    background: var(--sent-bubble);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+
+.comm-bubble.received {
+    align-self: flex-start;
+    background: var(--received-bubble);
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    border-bottom-left-radius: 4px;
+}
+
+/* attachments */
+
+.comm-file-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    margin-bottom: 4px;
+}
+
+.sent .comm-file-link {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.comm-timestamp {
+    font-size: 0.68rem;
+    opacity: 0.7;
+    display: block;
+    margin-top: 3px;
+    text-align: right;
+}
+
+/* input bar */
+
+.comm-input-bar {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.comm-attach-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.comm-input-bar input[type="text"] {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    outline: none;
+    font-size: 0.88rem;
+}
+
+.comm-input-bar button[type="submit"] {
+    background: var(--primary-blue);
+    color: #fff;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.comm-input-bar button[type="submit"]:disabled {
+    background: #9ca3af;
+}
+
+/* file preview */
+
+.file-selection-preview {
+    padding: 8px 14px;
+    background: #eff6ff;
+    border-top: 1px solid #dbeafe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+}
+
+/* empty state */
+
+.comm-empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+}
+
+.empty-visual {
+    font-size: 3rem;
+    margin-bottom: 8px;
+    opacity: 0.3;
+}
+
+/* mobile back button */
+
+.comm-back-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* responsive */
+
+@media (max-width: 960px) {
+    .comm-page {
+        padding: 96px 20px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .comm-card {
+        position: relative;
+        min-height: 500px;
+    }
+
+    /* sidebar takes full card, chat slides over it */
+    .comm-sidebar {
+        width: 100%;
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        background: #f9fafb;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-chat-active .comm-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .chat-interface {
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        background: #ffffff;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-chat-active .chat-interface {
+        transform: translateX(0);
+    }
+
+    .comm-back-btn {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .comm-page {
+        padding: 96px 12px 24px;
+    }
+
+    .comm-card {
+        border-radius: 14px;
+    }
+}
