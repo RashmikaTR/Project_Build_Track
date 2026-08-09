@@ -1,0 +1,1 @@
+# Keep this directory in Git so Vercel builds don't fail when attempting to write/read from the uploads folder.

@@ -5,7 +5,8 @@ import { io } from "socket.io-client";
 import "../styles/communication.css";
 import { useLanguage } from "../contexts/LanguageContext";
 
-const socket = io("http://localhost:5000");
+const BACKEND_HOST = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+const socket = io(BACKEND_HOST);
 
 const Communication = () => {
     const { t } = useLanguage();
@@ -205,7 +206,7 @@ const Communication = () => {
                                     >
                                         {m.fileUrl && (
                                             <a
-                                                href={`http://localhost:5000${m.fileUrl}`}
+                                                href={`${BACKEND_HOST}${m.fileUrl}`}
                                                 target="_blank"
                                                 rel="noreferrer"
                                                 className="comm-file-link"

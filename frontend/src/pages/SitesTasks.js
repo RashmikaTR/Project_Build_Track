@@ -4,7 +4,7 @@ import { getRole, getUserId, getUserName } from "../services/auth";
 import "../styles/sitesTasks.css";
 import { useLanguage } from "../contexts/LanguageContext";
 
-const BACKEND_HOST = "http://localhost:5000";
+const BACKEND_HOST = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 const DEFAULT_IMAGE_URL = `${BACKEND_HOST}/uploads/default-site.jpg`;
 const COMMENT_MAX = 280;
 
